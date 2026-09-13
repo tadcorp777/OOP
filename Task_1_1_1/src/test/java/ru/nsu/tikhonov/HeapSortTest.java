@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 class HeapSortTest {
 
     /**
-     * Базовый пример из задания
+     * Базовый пример из задания.
      */
     @Test
     void sortsExampleFromTask() {
@@ -49,7 +49,7 @@ class HeapSortTest {
     }
 
     /**
-     * Уже отсортированный массив
+     * Уже отсортированный массив.
      */
     @Test
     void sortsAlreadySortedArray() {
@@ -61,7 +61,7 @@ class HeapSortTest {
     }
 
     /**
-     * Обратный порядок
+     * Обратный порядок.
      */
     @Test
     void sortsReverseSortedArray() {
@@ -73,7 +73,7 @@ class HeapSortTest {
     }
 
     /**
-     * Дубликаты не должны теряться или путать порядок
+     * Дубликаты не должны теряться или путать порядок.
      */
     @Test
     void sortsArrayWithDuplicates() {
@@ -85,7 +85,7 @@ class HeapSortTest {
     }
 
     /**
-     * Отрицательные числа и ноль
+     * Отрицательные числа и ноль.
      */
     @Test
     void sortsNegativeAndPositiveNumbers() {
@@ -97,7 +97,7 @@ class HeapSortTest {
     }
 
     /**
-     * Стресс-тест из 500 случайных массивов, результат сверяем со стандартной сортировкой
+     * Стресс-тест из 500 случайных массивов, результат сверяем со стандартной сортировкой.
      */
     @Test
     void sortsManyRandomArrays() {
