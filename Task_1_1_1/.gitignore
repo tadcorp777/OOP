@@ -1,0 +1,12 @@
+# Gradle
+.gradle/
+build/
+
+# Kotlin
+.kotlin/
+
+# Manual build output
+build-manual/
+
+# Compiled Java files
+*.class
