@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.tikhonov","c":"HeapSort","l":"heapsort(int[])"},{"p":"ru.nsu.tikhonov","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
