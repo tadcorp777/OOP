@@ -33,3 +33,13 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
+    }
+}
+
