@@ -128,7 +128,9 @@ public class Round {
         System.out.println("Ваши карты: " + player.getCards() + " > " + player.getScore());
 
         if (!dealerCardRevealed) {
-            System.out.println("Карты дилера: [" + dealer.getCards().get(0) + ", <закрытая карта>]");
+            System.out.println("Карты дилера: ["
+                    + dealer.getCards().get(0)
+                    + ", <закрытая карта>]");
         } else {
             System.out.println("Карты дилера: " +
                     dealer.getCards() + " > " + dealer.getScore());
