@@ -1,0 +1,23 @@
+package ru.nsu.tikhonov.util;
+
+import java.util.Scanner;
+
+public class InputReader {
+    private final Scanner scanner;
+
+    public InputReader() {
+        scanner = new Scanner(System.in);
+    }
+
+    public int readPlayerChoice() {
+        while (true) {
+            String input = scanner.nextLine();
+
+            if (input.equals("0") || input.equals("1")) {
+                return Integer.parseInt(input);
+            }
+
+            System.out.println("Введите 1, чтобы взять карту, или 0, чтобы остановиться.");
+        }
+    }
+}
