@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.tikhonov"},{"l":"ru.nsu.tikhonov.card"},{"l":"ru.nsu.tikhonov.deck"},{"l":"ru.nsu.tikhonov.game"},{"l":"ru.nsu.tikhonov.player"},{"l":"ru.nsu.tikhonov.util"}];updateSearchResults();
