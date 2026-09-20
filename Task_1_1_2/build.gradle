@@ -8,6 +8,11 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
@@ -16,6 +21,15 @@ java {
 
 application {
     mainClass = 'ru.nsu.tikhonov.Main'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 jacocoTestReport {
