@@ -2,6 +2,9 @@ package ru.nsu.tikhonov.util;
 
 import java.util.Scanner;
 
+/**
+ * Отвечает за чтение команд игрока из консоли.
+ */
 public class InputReader {
     private final Scanner scanner;
 

@@ -1,5 +1,8 @@
 package ru.nsu.tikhonov.card;
 
+/**
+ * Представляет достоинство игральной карты и его значение в Blackjack.
+ */
 public enum Rank {
     TWO("Двойка", 2),
     THREE("Тройка", 3),

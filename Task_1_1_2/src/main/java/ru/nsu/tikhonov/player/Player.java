@@ -5,6 +5,10 @@ import ru.nsu.tikhonov.card.Card;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Представляет игрока и его карты.
+ */
 public class Player {
     private final String name;
     private final List<Card> cards;

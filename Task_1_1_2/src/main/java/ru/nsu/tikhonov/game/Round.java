@@ -6,6 +6,9 @@ import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
 
+/**
+ * Отвечает за раздачу карт, ход игрока, ход дилера и определение результата раунда.
+ */
 public class Round {
     private final Player player;
     private final Dealer dealer;
@@ -125,9 +128,7 @@ public class Round {
         System.out.println("Ваши карты: " + player.getCards() + " > " + player.getScore());
 
         if (!dealerCardRevealed) {
-            System.out.println("Карты дилера: [" +
-                    dealer.getCards().get(0) +
-                    ", <закрытая карта>]");
+            System.out.println("Карты дилера: [" + dealer.getCards().get(0) + ", <закрытая карта>]");
         } else {
             System.out.println("Карты дилера: " +
                     dealer.getCards() + " > " + dealer.getScore());

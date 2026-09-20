@@ -1,5 +1,8 @@
 package ru.nsu.tikhonov.card;
 
+/**
+ * Представляет масть игральной карты.
+ */
 public enum Suit {
     HEARTS("Червы"),
     DIAMONDS("Бубны"),

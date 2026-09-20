@@ -1,5 +1,8 @@
 package ru.nsu.tikhonov.card;
 
+/**
+ * Представляет одну игральную карту.
+ */
 public class Card {
     private final Suit suit;
     private final Rank rank;

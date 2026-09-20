@@ -1,17 +1,25 @@
 package ru.nsu.tikhonov.deck;
 
-import ru.nsu.tikhonov.card.Card;
-import ru.nsu.tikhonov.card.Rank;
-import ru.nsu.tikhonov.card.Suit;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import ru.nsu.tikhonov.card.Card;
+import ru.nsu.tikhonov.card.Rank;
+import ru.nsu.tikhonov.card.Suit;
+
+/**
+ * Представляет колоду игральных карт.
+ *
+ */
 public class Deck {
     private final List<Card> cards;
     private final Random random;
 
+    /**
+     * Создает колоду из указанного количества стандартных колод и перемешивает.
+     *
+     */
     public Deck(int deckCount) {
         cards = new ArrayList<>();
         random = new Random();

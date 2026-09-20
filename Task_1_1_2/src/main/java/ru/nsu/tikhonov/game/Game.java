@@ -5,6 +5,9 @@ import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
 
+/**
+ * Управляет всей игрой и последовательностью раундов.
+ */
 public class Game {
     private final Player player;
     private final Dealer dealer;
