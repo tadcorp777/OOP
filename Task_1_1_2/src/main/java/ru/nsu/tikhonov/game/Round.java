@@ -18,6 +18,10 @@ public class Round {
     private Card hiddenDealerCard;
     private boolean dealerCardRevealed;
 
+    /**
+     * Создает новый раунд.
+     *
+     */
     public Round(Player player, Dealer dealer, Deck deck, InputReader inputReader) {
         this.player = player;
         this.dealer = dealer;
@@ -25,6 +29,10 @@ public class Round {
         this.inputReader = inputReader;
     }
 
+    /**
+     * Запускает раунд.
+     *
+     */
     public int play() {
         dealInitialCards();
 
@@ -132,8 +140,10 @@ public class Round {
                     + dealer.getCards().get(0)
                     + ", <закрытая карта>]");
         } else {
-            System.out.println("Карты дилера: " +
-                    dealer.getCards() + " > " + dealer.getScore());
+            System.out.println("Карты дилера: "
+                    + dealer.getCards()
+                    + " > "
+                    + dealer.getScore());
         }
     }
 

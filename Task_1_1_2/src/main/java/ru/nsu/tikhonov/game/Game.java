@@ -16,12 +16,18 @@ public class Game {
     private int playerWins;
     private int dealerWins;
 
+    /**
+     * Создает новую игру с одним игроком и одним дилером.
+     */
     public Game() {
         player = new Player("Игрок");
         dealer = new Dealer();
         inputReader = new InputReader();
     }
 
+    /**
+     * Запускает игру и последовательно проводит раунды.
+     */
     public void start() {
         System.out.println("Добро пожаловать в Блэкджек!");
 

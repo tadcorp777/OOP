@@ -17,3 +17,12 @@ java {
 application {
     mainClass = 'ru.nsu.tikhonov.Main'
 }
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}

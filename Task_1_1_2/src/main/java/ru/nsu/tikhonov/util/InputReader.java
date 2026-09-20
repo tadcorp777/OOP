@@ -12,6 +12,10 @@ public class InputReader {
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Считывает выбор игрока.
+     *
+     */
     public int readPlayerChoice() {
         while (true) {
             String input = scanner.nextLine();

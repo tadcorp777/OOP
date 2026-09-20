@@ -3,7 +3,6 @@ package ru.nsu.tikhonov.deck;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;

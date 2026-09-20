@@ -1,9 +1,8 @@
 package ru.nsu.tikhonov.player;
 
-import ru.nsu.tikhonov.card.Card;
-
 import java.util.ArrayList;
 import java.util.List;
+import ru.nsu.tikhonov.card.Card;
 
 
 /**
@@ -18,6 +17,10 @@ public class Player {
         cards = new ArrayList<>();
     }
 
+    /**
+     * Добавляет карту игроку.
+     *
+     */
     public void addCard(Card card) {
         cards.add(card);
     }
