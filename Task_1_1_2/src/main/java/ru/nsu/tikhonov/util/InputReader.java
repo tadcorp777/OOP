@@ -1,23 +1,30 @@
 package ru.nsu.tikhonov.util;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
- * Чтение команд игрока из консоли.
+ * Отвечает за чтение команд игрока из консоли.
  */
 public class InputReader {
     private final Scanner scanner;
 
     /**
-     * Создает объект для чтения ввода из консоли.
+     * Создает объект для чтения из стандартного ввода.
      */
     public InputReader() {
-        scanner = new Scanner(System.in);
+        this(System.in);
+    }
+
+    /**
+     * Создает объект для чтения из указанного потока.
+     */
+    public InputReader(InputStream inputStream) {
+        scanner = new Scanner(inputStream);
     }
 
     /**
      * Считывает выбор игрока.
-     *
      */
     public int readPlayerChoice() {
         while (true) {
@@ -34,7 +41,6 @@ public class InputReader {
 
     /**
      * Считывает количество колод.
-     *
      */
     public int readDeckCount() {
         while (true) {
@@ -47,6 +53,8 @@ public class InputReader {
                     return deckCount;
                 }
             } catch (NumberFormatException ignored) {
+                System.out.println("Введите положительное количество колод.");
+                continue;
             }
 
             System.out.println("Введите положительное количество колод.");

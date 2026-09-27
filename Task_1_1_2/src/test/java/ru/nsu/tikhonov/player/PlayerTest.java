@@ -5,10 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
@@ -170,7 +168,7 @@ class PlayerTest {
     }
 
     /**
-     * Остановку игрока без взятия карты.
+     * Остановка игрока без взятия карты.
      */
     @Test
     void playTurnShouldStopWhenPlayerChoosesZero() {
@@ -178,8 +176,7 @@ class PlayerTest {
         TestDeck deck = new TestDeck(
                 new Card(Suit.HEARTS, Rank.TWO));
 
-        System.setIn(new ByteArrayInputStream("0\n".getBytes()));
-        InputReader inputReader = new InputReader();
+        InputReader inputReader = createInputReader("0\n");
 
         boolean result = player.playTurn(deck, inputReader);
 
@@ -198,8 +195,7 @@ class PlayerTest {
 
         player.addCard(new Card(Suit.CLUBS, Rank.TEN));
 
-        System.setIn(new ByteArrayInputStream("1\n0\n".getBytes()));
-        InputReader inputReader = new InputReader();
+        InputReader inputReader = createInputReader("1\n0\n");
 
         boolean result = player.playTurn(deck, inputReader);
 
@@ -214,14 +210,13 @@ class PlayerTest {
     @Test
     void playTurnShouldReturnFalseWhenPlayerBusts() {
         Player player = new Player("Игрок");
-        final TestDeck deck = new TestDeck(
-                new Card(Suit.HEARTS, Rank.TWO));
+        TestDeck deck = new TestDeck(
+                new Card(Suit.HEARTS, Rank.FIVE));
 
         player.addCard(new Card(Suit.CLUBS, Rank.TEN));
         player.addCard(new Card(Suit.SPADES, Rank.NINE));
 
-        System.setIn(new ByteArrayInputStream("1\n".getBytes()));
-        InputReader inputReader = new InputReader();
+        InputReader inputReader = createInputReader("1\n");
 
         boolean result = player.playTurn(deck, inputReader);
 
@@ -231,13 +226,20 @@ class PlayerTest {
     }
 
     /**
+     * Создаёт InputReader с тестовым вводом.
+     */
+    private static InputReader createInputReader(String input) {
+        return new InputReader(new ByteArrayInputStream(input.getBytes()));
+    }
+
+    /**
      * Тестовая колода.
      */
     private static class TestDeck extends Deck {
         private final Deque<Card> cards;
 
         /**
-         * Создает тестовую колоду.
+         * Создаёт тестовую колоду.
          */
         TestDeck(Card... testCards) {
             super(1);

@@ -3,11 +3,11 @@ package ru.nsu.tikhonov.game;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.Test;
+
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;
@@ -20,8 +20,6 @@ import ru.nsu.tikhonov.util.InputReader;
  * Тестирует Round.
  */
 class RoundTest {
-
-    private static final InputStream ORIGINAL_SYSTEM_IN = System.in;
 
     /**
      * Победа игрока при блэкджеке.
@@ -41,7 +39,7 @@ class RoundTest {
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -66,7 +64,7 @@ class RoundTest {
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -88,13 +86,11 @@ class RoundTest {
                 new Card(Suit.DIAMONDS, Rank.SEVEN),
                 new Card(Suit.HEARTS, Rank.FIVE));
 
-        setInput("1\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("1\n"));
 
         RoundResult result = round.play();
 
@@ -116,13 +112,11 @@ class RoundTest {
                 new Card(Suit.DIAMONDS, Rank.SIX),
                 new Card(Suit.HEARTS, Rank.TEN));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -143,13 +137,11 @@ class RoundTest {
                 new Card(Suit.SPADES, Rank.NINE),
                 new Card(Suit.DIAMONDS, Rank.EIGHT));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -170,13 +162,11 @@ class RoundTest {
                 new Card(Suit.SPADES, Rank.EIGHT),
                 new Card(Suit.DIAMONDS, Rank.NINE));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -197,13 +187,11 @@ class RoundTest {
                 new Card(Suit.SPADES, Rank.EIGHT),
                 new Card(Suit.DIAMONDS, Rank.EIGHT));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -211,7 +199,7 @@ class RoundTest {
     }
 
     /**
-     * Дилер берёт карту при счете меньше 17.
+     * Дилер берет карту при счете меньше 17.
      */
     @Test
     void dealerShouldTakeCardWhenScoreIsLessThan17() {
@@ -225,13 +213,11 @@ class RoundTest {
                 new Card(Suit.DIAMONDS, Rank.SIX),
                 new Card(Suit.HEARTS, Rank.TWO));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -255,13 +241,11 @@ class RoundTest {
                 new Card(Suit.HEARTS, Rank.TWO),
                 new Card(Suit.CLUBS, Rank.THREE));
 
-        setInput("0\n");
-
         Round round = new Round(
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -287,7 +271,7 @@ class RoundTest {
                 player,
                 dealer,
                 deck,
-                new InputReader());
+                createInputReader("0\n"));
 
         RoundResult result = round.play();
 
@@ -295,10 +279,10 @@ class RoundTest {
     }
 
     /**
-     * Тестовый ввод.
+     * Создает InputReader с тестовым вводом.
      */
-    private static void setInput(String input) {
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+    private static InputReader createInputReader(String input) {
+        return new InputReader(new ByteArrayInputStream(input.getBytes()));
     }
 
     /**
