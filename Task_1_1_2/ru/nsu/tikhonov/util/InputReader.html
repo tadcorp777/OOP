@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">InputReader</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Чтение команд игрока из консоли.</div>
+<div class="block">Отвечает за чтение команд игрока из консоли.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,7 +105,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">InputReader</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Создает объект для чтения ввода из консоли.</div>
+<div class="block">Создает объект для чтения из стандартного ввода.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.io.InputStream)" class="member-name-link">InputReader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Создает объект для чтения из указанного потока.</div>
 </div>
 </div>
 </section>
@@ -152,7 +156,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>InputReader</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">InputReader</span>()</div>
-<div class="block">Создает объект для чтения ввода из консоли.</div>
+<div class="block">Создает объект для чтения из стандартного ввода.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.io.InputStream)">
+<h3>InputReader</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">InputReader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream)</span></div>
+<div class="block">Создает объект для чтения из указанного потока.</div>
 </section>
 </li>
 </ul>
