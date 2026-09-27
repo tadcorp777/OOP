@@ -80,6 +80,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="ru/nsu/tikhonov/player/Dealer.html#%3Cinit%3E()" class="member-name-link">Dealer()</a> - Constructor for class ru.nsu.tikhonov.player.<a href="ru/nsu/tikhonov/player/Dealer.html" title="class in ru.nsu.tikhonov.player">Dealer</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html#DEALER_WIN" class="member-name-link">DEALER_WIN</a> - Enum constant in enum class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/RoundResult.html" title="enum class in ru.nsu.tikhonov.game">RoundResult</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/tikhonov/deck/Deck.html" class="type-name-link" title="class in ru.nsu.tikhonov.deck">Deck</a> - Class in <a href="ru/nsu/tikhonov/deck/package-summary.html">ru.nsu.tikhonov.deck</a></dt>
 <dd>
 <div class="block">Представляет колоду игральных карт.</div>
@@ -89,6 +91,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Создает колоду из указанного количества стандартных колод и перемешивает.</div>
 </dd>
 <dt><a href="ru/nsu/tikhonov/card/Suit.html#DIAMONDS" class="member-name-link">DIAMONDS</a> - Enum constant in enum class ru.nsu.tikhonov.card.<a href="ru/nsu/tikhonov/card/Suit.html" title="enum class in ru.nsu.tikhonov.card">Suit</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html#DRAW" class="member-name-link">DRAW</a> - Enum constant in enum class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/RoundResult.html" title="enum class in ru.nsu.tikhonov.game">RoundResult</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:E">E</h2>
@@ -139,10 +143,12 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="ru/nsu/tikhonov/util/InputReader.html" class="type-name-link" title="class in ru.nsu.tikhonov.util">InputReader</a> - Class in <a href="ru/nsu/tikhonov/util/package-summary.html">ru.nsu.tikhonov.util</a></dt>
 <dd>
-<div class="block">Отвечает за чтение команд игрока из консоли.</div>
+<div class="block">Чтение команд игрока из консоли.</div>
 </dd>
 <dt><a href="ru/nsu/tikhonov/util/InputReader.html#%3Cinit%3E()" class="member-name-link">InputReader()</a> - Constructor for class ru.nsu.tikhonov.util.<a href="ru/nsu/tikhonov/util/InputReader.html" title="class in ru.nsu.tikhonov.util">InputReader</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Создает объект для чтения ввода из консоли.</div>
+</dd>
 <dt><a href="ru/nsu/tikhonov/card/Rank.html#isAce()" class="member-name-link">isAce()</a> - Method in enum class ru.nsu.tikhonov.card.<a href="ru/nsu/tikhonov/card/Rank.html" title="enum class in ru.nsu.tikhonov.card">Rank</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/tikhonov/player/Player.html#isBlackjack()" class="member-name-link">isBlackjack()</a> - Method in class ru.nsu.tikhonov.player.<a href="ru/nsu/tikhonov/player/Player.html" title="class in ru.nsu.tikhonov.player">Player</a></dt>
@@ -188,6 +194,16 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="ru/nsu/tikhonov/player/Player.html#%3Cinit%3E(java.lang.String)" class="member-name-link">Player(String)</a> - Constructor for class ru.nsu.tikhonov.player.<a href="ru/nsu/tikhonov/player/Player.html" title="class in ru.nsu.tikhonov.player">Player</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html#PLAYER_WIN" class="member-name-link">PLAYER_WIN</a> - Enum constant in enum class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/RoundResult.html" title="enum class in ru.nsu.tikhonov.game">RoundResult</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/tikhonov/player/Dealer.html#playTurn(ru.nsu.tikhonov.deck.Deck)" class="member-name-link">playTurn(Deck)</a> - Method in class ru.nsu.tikhonov.player.<a href="ru/nsu/tikhonov/player/Dealer.html" title="class in ru.nsu.tikhonov.player">Dealer</a></dt>
+<dd>
+<div class="block">Выполняет автоматический ход дилера.</div>
+</dd>
+<dt><a href="ru/nsu/tikhonov/player/Player.html#playTurn(ru.nsu.tikhonov.deck.Deck,ru.nsu.tikhonov.util.InputReader)" class="member-name-link">playTurn(Deck, InputReader)</a> - Method in class ru.nsu.tikhonov.player.<a href="ru/nsu/tikhonov/player/Player.html" title="class in ru.nsu.tikhonov.player">Player</a></dt>
+<dd>
+<div class="block">Выполняет ход игрока.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:Q">Q</h2>
 <dl class="index">
@@ -200,6 +216,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Представляет достоинство игральной карты и его значение в Blackjack.</div>
 </dd>
+<dt><a href="ru/nsu/tikhonov/util/InputReader.html#readDeckCount()" class="member-name-link">readDeckCount()</a> - Method in class ru.nsu.tikhonov.util.<a href="ru/nsu/tikhonov/util/InputReader.html" title="class in ru.nsu.tikhonov.util">InputReader</a></dt>
+<dd>
+<div class="block">Считывает количество колод.</div>
+</dd>
 <dt><a href="ru/nsu/tikhonov/util/InputReader.html#readPlayerChoice()" class="member-name-link">readPlayerChoice()</a> - Method in class ru.nsu.tikhonov.util.<a href="ru/nsu/tikhonov/util/InputReader.html" title="class in ru.nsu.tikhonov.util">InputReader</a></dt>
 <dd>
 <div class="block">Считывает выбор игрока.</div>
@@ -211,6 +231,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="ru/nsu/tikhonov/game/Round.html#%3Cinit%3E(ru.nsu.tikhonov.player.Player,ru.nsu.tikhonov.player.Dealer,ru.nsu.tikhonov.deck.Deck,ru.nsu.tikhonov.util.InputReader)" class="member-name-link">Round(Player, Dealer, Deck, InputReader)</a> - Constructor for class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/Round.html" title="class in ru.nsu.tikhonov.game">Round</a></dt>
 <dd>
 <div class="block">Создает новый раунд.</div>
+</dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html" class="type-name-link" title="enum class in ru.nsu.tikhonov.game">RoundResult</a> - Enum Class in <a href="ru/nsu/tikhonov/game/package-summary.html">ru.nsu.tikhonov.game</a></dt>
+<dd>
+<div class="block">Результат раунда.</div>
 </dd>
 <dt><a href="ru/nsu/tikhonov/package-summary.html">ru.nsu.tikhonov</a> - package ru.nsu.tikhonov</dt>
 <dd>&nbsp;</dd>
@@ -271,12 +295,21 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/RoundResult.html" title="enum class in ru.nsu.tikhonov.game">RoundResult</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="ru/nsu/tikhonov/card/Rank.html#values()" class="member-name-link">values()</a> - Static method in enum class ru.nsu.tikhonov.card.<a href="ru/nsu/tikhonov/card/Rank.html" title="enum class in ru.nsu.tikhonov.card">Rank</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
 <dt><a href="ru/nsu/tikhonov/card/Suit.html#values()" class="member-name-link">values()</a> - Static method in enum class ru.nsu.tikhonov.card.<a href="ru/nsu/tikhonov/card/Suit.html" title="enum class in ru.nsu.tikhonov.card">Suit</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="ru/nsu/tikhonov/game/RoundResult.html#values()" class="member-name-link">values()</a> - Static method in enum class ru.nsu.tikhonov.game.<a href="ru/nsu/tikhonov/game/RoundResult.html" title="enum class in ru.nsu.tikhonov.game">RoundResult</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>

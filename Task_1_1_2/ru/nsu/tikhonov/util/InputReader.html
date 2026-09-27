@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">InputReader</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Отвечает за чтение команд игрока из консоли.</div>
+<div class="block">Чтение команд игрока из консоли.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,7 +104,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">InputReader</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Создает объект для чтения ввода из консоли.</div>
+</div>
 </div>
 </section>
 </li>
@@ -120,8 +122,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readPlayerChoice()" class="member-name-link">readPlayerChoice</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readDeckCount()" class="member-name-link">readDeckCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Считывает количество колод.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readPlayerChoice()" class="member-name-link">readPlayerChoice</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Считывает выбор игрока.</div>
 </div>
 </div>
@@ -145,6 +152,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>InputReader</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">InputReader</span>()</div>
+<div class="block">Создает объект для чтения ввода из консоли.</div>
 </section>
 </li>
 </ul>
@@ -160,6 +168,13 @@ loadScripts(document, 'script');</script>
 <h3>readPlayerChoice</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readPlayerChoice</span>()</div>
 <div class="block">Считывает выбор игрока.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="readDeckCount()">
+<h3>readDeckCount</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readDeckCount</span>()</div>
+<div class="block">Считывает количество колод.</div>
 </section>
 </li>
 </ul>
