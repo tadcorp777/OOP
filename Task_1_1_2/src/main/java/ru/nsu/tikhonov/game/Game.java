@@ -4,7 +4,6 @@ import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
-import ru.nsu.tikhonov.game.RoundResult;
 
 /**
  * Управляет всей игрой и последовательностью раундов.
@@ -52,6 +51,8 @@ public class Game {
                 case DEALER_WIN -> dealerWins++;
                 case DRAW -> {
                 }
+                default -> throw new IllegalStateException(
+                        "Неизвестный результат раунда.");
             }
 
             System.out.println();

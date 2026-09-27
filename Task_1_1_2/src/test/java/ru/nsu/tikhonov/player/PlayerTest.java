@@ -1,20 +1,20 @@
 package ru.nsu.tikhonov.player;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
-
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;
 import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.util.InputReader;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Тестирует Player.
@@ -214,8 +214,8 @@ class PlayerTest {
     @Test
     void playTurnShouldReturnFalseWhenPlayerBusts() {
         Player player = new Player("Игрок");
-        TestDeck deck = new TestDeck(
-                new Card(Suit.HEARTS, Rank.FIVE));
+        final TestDeck deck = new TestDeck(
+                new Card(Suit.HEARTS, Rank.TWO));
 
         player.addCard(new Card(Suit.CLUBS, Rank.TEN));
         player.addCard(new Card(Suit.SPADES, Rank.NINE));

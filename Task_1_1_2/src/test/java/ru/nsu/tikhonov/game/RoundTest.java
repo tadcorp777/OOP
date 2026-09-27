@@ -1,13 +1,13 @@
 package ru.nsu.tikhonov.game;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;
@@ -15,8 +15,6 @@ import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Тестирует Round.

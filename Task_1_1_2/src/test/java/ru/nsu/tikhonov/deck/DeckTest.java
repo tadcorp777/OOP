@@ -1,13 +1,13 @@
 package ru.nsu.tikhonov.deck;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 /**
  * Тестирует Deck.
  */

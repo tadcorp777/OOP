@@ -5,7 +5,6 @@ import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
-import ru.nsu.tikhonov.game.RoundResult;
 
 /**
  * Отвечает за раздачу карт, ход игрока, ход дилера и определение результата раунда.

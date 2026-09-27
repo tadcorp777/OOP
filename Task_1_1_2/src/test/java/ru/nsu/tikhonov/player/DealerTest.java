@@ -1,16 +1,14 @@
 package ru.nsu.tikhonov.player;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
-
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.tikhonov.card.Card;
 import ru.nsu.tikhonov.card.Rank;
 import ru.nsu.tikhonov.card.Suit;
 import ru.nsu.tikhonov.deck.Deck;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Тестирует Dealer.
