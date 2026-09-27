@@ -4,6 +4,7 @@ import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
+import ru.nsu.tikhonov.game.RoundResult;
 
 /**
  * Управляет всей игрой и последовательностью раундов.
@@ -30,7 +31,8 @@ public class Game {
      */
     public void start() {
         System.out.println("Добро пожаловать в Блэкджек!");
-
+        System.out.println("Введите количество колод:");
+        int deckCount = inputReader.readDeckCount();
         int roundNumber = 1;
 
         while (true) {
@@ -40,15 +42,16 @@ public class Game {
             player.clearCards();
             dealer.clearCards();
 
-            Deck deck = new Deck(4);
+            Deck deck = new Deck(deckCount);
 
             Round round = new Round(player, dealer, deck, inputReader);
-            int result = round.play();
+            RoundResult result = round.play();
 
-            if (result == 1) {
-                playerWins++;
-            } else if (result == -1) {
-                dealerWins++;
+            switch (result) {
+                case PLAYER_WIN -> playerWins++;
+                case DEALER_WIN -> dealerWins++;
+                case DRAW -> {
+                }
             }
 
             System.out.println();

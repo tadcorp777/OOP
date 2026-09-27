@@ -3,6 +3,8 @@ package ru.nsu.tikhonov.player;
 import java.util.ArrayList;
 import java.util.List;
 import ru.nsu.tikhonov.card.Card;
+import ru.nsu.tikhonov.deck.Deck;
+import ru.nsu.tikhonov.util.InputReader;
 
 
 /**
@@ -63,5 +65,33 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    /**
+     * Выполняет ход игрока.
+     *
+     */
+    public boolean playTurn(Deck deck, InputReader inputReader) {
+        while (true) {
+            System.out.println(
+                    "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться.");
+
+            int choice = inputReader.readPlayerChoice();
+
+            if (choice == 0) {
+                return true;
+            }
+
+            Card card = deck.takeCard();
+            addCard(card);
+
+            System.out.println("Вы открыли карту " + card);
+            System.out.println("Ваш текущий счет: " + getScore());
+
+            if (isBust()) {
+                System.out.println("Вы набрали больше 21. Вы проиграли раунд.");
+                return false;
+            }
+        }
     }
 }

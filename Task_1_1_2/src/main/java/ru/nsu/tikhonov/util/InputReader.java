@@ -3,11 +3,14 @@ package ru.nsu.tikhonov.util;
 import java.util.Scanner;
 
 /**
- * Отвечает за чтение команд игрока из консоли.
+ * Чтение команд игрока из консоли.
  */
 public class InputReader {
     private final Scanner scanner;
 
+    /**
+     * Создает объект для чтения ввода из консоли.
+     */
     public InputReader() {
         scanner = new Scanner(System.in);
     }
@@ -24,7 +27,29 @@ public class InputReader {
                 return Integer.parseInt(input);
             }
 
-            System.out.println("Введите 1, чтобы взять карту, или 0, чтобы остановиться.");
+            System.out.println(
+                    "Введите 1, чтобы взять карту, или 0, чтобы остановиться.");
+        }
+    }
+
+    /**
+     * Считывает количество колод.
+     *
+     */
+    public int readDeckCount() {
+        while (true) {
+            String input = scanner.nextLine();
+
+            try {
+                int deckCount = Integer.parseInt(input);
+
+                if (deckCount > 0) {
+                    return deckCount;
+                }
+            } catch (NumberFormatException ignored) {
+            }
+
+            System.out.println("Введите положительное количество колод.");
         }
     }
 }

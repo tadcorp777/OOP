@@ -5,6 +5,7 @@ import ru.nsu.tikhonov.deck.Deck;
 import ru.nsu.tikhonov.player.Dealer;
 import ru.nsu.tikhonov.player.Player;
 import ru.nsu.tikhonov.util.InputReader;
+import ru.nsu.tikhonov.game.RoundResult;
 
 /**
  * Отвечает за раздачу карт, ход игрока, ход дилера и определение результата раунда.
@@ -33,31 +34,35 @@ public class Round {
      * Запускает раунд.
      *
      */
-    public int play() {
+    public RoundResult play() {
         dealInitialCards();
 
         if (player.isBlackjack() && dealer.isBlackjack()) {
             revealDealerCard();
             printCards();
             System.out.println("У обоих блэкджек. Ничья.");
-            return 0;
+            return RoundResult.DRAW;
         }
 
         if (player.isBlackjack()) {
             printCards();
             System.out.println("У вас блэкджек! Вы выиграли раунд.");
-            return 1;
+            return RoundResult.PLAYER_WIN;
         }
 
         if (dealer.isBlackjack()) {
             revealDealerCard();
             printCards();
             System.out.println("У дилера блэкджек. Вы проиграли раунд.");
-            return -1;
+            return RoundResult.DEALER_WIN;
         }
 
-        if (!playerTurn()) {
-            return -1;
+        System.out.println();
+        System.out.println("Ваш ход");
+        System.out.println("-------");
+
+        if (!player.playTurn(deck, inputReader)) {
+            return RoundResult.DEALER_WIN;
         }
 
         dealerTurn();
@@ -79,52 +84,17 @@ public class Round {
         printCards();
     }
 
-    private boolean playerTurn() {
-        System.out.println();
-        System.out.println("Ваш ход");
-        System.out.println("-------");
-
-        while (true) {
-            System.out.println("Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться.");
-            int choice = inputReader.readPlayerChoice();
-
-            if (choice == 0) {
-                return true;
-            }
-
-            Card card = deck.takeCard();
-            player.addCard(card);
-
-            System.out.println("Вы открыли карту " + card);
-            printCards();
-
-            if (player.isBust()) {
-                System.out.println("Вы набрали больше 21. Вы проиграли раунд.");
-                return false;
-            }
-        }
-    }
-
     private void dealerTurn() {
         System.out.println();
         System.out.println("Ход дилера");
         System.out.println("-------");
 
         revealDealerCard();
-
         printCards();
 
-        while (dealer.getScore() < 17) {
-            Card card = deck.takeCard();
-            dealer.addCard(card);
+        dealer.playTurn(deck);
 
-            System.out.println("Дилер открывает карту " + card);
-            printCards();
-
-            if (dealer.isBust()) {
-                return;
-            }
-        }
+        printCards();
     }
 
     private void revealDealerCard() {
@@ -147,25 +117,25 @@ public class Round {
         }
     }
 
-    private int determineWinner() {
+    private RoundResult determineWinner() {
         System.out.println();
 
         if (dealer.isBust()) {
             System.out.println("Дилер набрал больше 21. Вы выиграли раунд!");
-            return 1;
+            return RoundResult.PLAYER_WIN;
         }
 
         if (player.getScore() > dealer.getScore()) {
             System.out.println("Вы выиграли раунд!");
-            return 1;
+            return RoundResult.PLAYER_WIN;
         }
 
         if (player.getScore() < dealer.getScore()) {
             System.out.println("Вы проиграли раунд.");
-            return -1;
+            return RoundResult.DEALER_WIN;
         }
 
         System.out.println("Ничья.");
-        return 0;
+        return RoundResult.DRAW;
     }
 }
