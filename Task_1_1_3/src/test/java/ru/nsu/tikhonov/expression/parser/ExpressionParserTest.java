@@ -1,10 +1,10 @@
 package ru.nsu.tikhonov.expression.parser;
 
-import org.junit.jupiter.api.Test;
-import ru.nsu.tikhonov.expression.Expression;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
+import ru.nsu.tikhonov.expression.Expression;
 
 /**
  * Тесты для парсера математических выражений.

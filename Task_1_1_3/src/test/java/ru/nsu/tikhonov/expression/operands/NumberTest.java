@@ -1,9 +1,9 @@
 package ru.nsu.tikhonov.expression.operands;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.tikhonov.expression.Expression;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Тесты для числового выражения.

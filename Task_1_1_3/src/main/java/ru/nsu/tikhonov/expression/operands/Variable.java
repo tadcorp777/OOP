@@ -1,8 +1,8 @@
 package ru.nsu.tikhonov.expression.operands;
 
-import ru.nsu.tikhonov.expression.Expression;
-
 import java.util.Map;
+
+import ru.nsu.tikhonov.expression.Expression;
 
 /**
  * Выражение, представляющее переменную.

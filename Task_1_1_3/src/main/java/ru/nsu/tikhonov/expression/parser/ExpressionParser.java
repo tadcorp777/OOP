@@ -76,7 +76,7 @@ public class ExpressionParser {
      * Разбирает выражение, состоящее из двух операндов.
      */
     private Expression parseOperation() {
-        position++; // пропускаем '('
+        position++;
 
         Expression left = parseExpression();
 
@@ -101,7 +101,7 @@ public class ExpressionParser {
             );
         }
 
-        position++; // пропускаем ')'
+        position++;
 
         return createOperation(operator, left, right);
     }

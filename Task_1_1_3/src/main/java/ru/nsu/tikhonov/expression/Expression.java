@@ -20,26 +20,6 @@ public abstract class Expression {
     public abstract int eval(Map<String, Integer> variables);
 
     /**
-     * Возвращает строковое представление выражения.
-     */
-    @Override
-    public abstract String toString();
-
-    /**
-     * Выводит выражение в консоль.
-     */
-    public void print() {
-        System.out.println(this);
-    }
-
-    /**
-     * Выводит выражение в переданный поток.
-     */
-    public void print(PrintWriter out) {
-        out.println(this);
-    }
-
-    /**
      * Вычисляет выражение по строке с означиваниями переменных.
      */
     public int eval(String assignments) {
@@ -64,4 +44,25 @@ public abstract class Expression {
 
         return eval(variables);
     }
+
+    /**
+     * Возвращает строковое представление выражения.
+     */
+    @Override
+    public abstract String toString();
+
+    /**
+     * Выводит выражение в консоль.
+     */
+    public void print() {
+        System.out.println(this);
+    }
+
+    /**
+     * Выводит выражение в переданный поток.
+     */
+    public void print(PrintWriter out) {
+        out.println(this);
+    }
+
 }

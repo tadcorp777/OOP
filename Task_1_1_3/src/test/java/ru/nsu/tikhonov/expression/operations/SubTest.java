@@ -1,11 +1,11 @@
 package ru.nsu.tikhonov.expression.operations;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import ru.nsu.tikhonov.expression.Expression;
 import ru.nsu.tikhonov.expression.operands.Number;
 import ru.nsu.tikhonov.expression.operands.Variable;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Тесты для операции вычитания.
