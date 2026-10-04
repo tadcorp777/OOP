@@ -32,3 +32,12 @@ run {
 tasks.withType(JavaExec).configureEach {
     standardInput = System.in
 }
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
