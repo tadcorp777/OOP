@@ -1,7 +1,6 @@
 package ru.nsu.tikhonov.expression.operations;
 
 import java.util.Map;
-
 import ru.nsu.tikhonov.expression.Expression;
 
 /**

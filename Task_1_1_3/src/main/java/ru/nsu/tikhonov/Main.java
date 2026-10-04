@@ -1,7 +1,6 @@
 package ru.nsu.tikhonov;
 
 import java.util.Scanner;
-
 import ru.nsu.tikhonov.expression.Expression;
 import ru.nsu.tikhonov.expression.parser.ExpressionParser;
 

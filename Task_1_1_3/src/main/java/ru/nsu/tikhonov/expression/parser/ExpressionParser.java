@@ -29,13 +29,14 @@ public class ExpressionParser {
         this.input = input;
         this.position = 0;
 
-        Expression result = parseExpression();
+        final Expression result = parseExpression();
 
         skipSpaces();
 
         if (position != input.length()) {
             throw new IllegalArgumentException(
-                    "Лишние символы в конце выражения: " + input.substring(position)
+                    "Лишние символы в конце выражения: "
+                            + input.substring(position)
             );
         }
 
@@ -49,10 +50,12 @@ public class ExpressionParser {
         skipSpaces();
 
         if (position >= input.length()) {
-            throw new IllegalArgumentException("Неожиданный конец выражения");
+            throw new IllegalArgumentException(
+                    "Неожиданный конец выражения"
+            );
         }
 
-        char current = input.charAt(position);
+        final char current = input.charAt(position);
 
         if (current == '(') {
             return parseOperation();
@@ -78,7 +81,7 @@ public class ExpressionParser {
     private Expression parseOperation() {
         position++;
 
-        Expression left = parseExpression();
+        final Expression left = parseExpression();
 
         skipSpaces();
 
@@ -88,14 +91,15 @@ public class ExpressionParser {
             );
         }
 
-        char operator = input.charAt(position);
+        final char operator = input.charAt(position);
         position++;
 
-        Expression right = parseExpression();
+        final Expression right = parseExpression();
 
         skipSpaces();
 
-        if (position >= input.length() || input.charAt(position) != ')') {
+        if (position >= input.length()
+                || input.charAt(position) != ')') {
             throw new IllegalArgumentException(
                     "Ожидалась закрывающая скобка"
             );
@@ -138,7 +142,7 @@ public class ExpressionParser {
      * Разбирает числовую константу.
      */
     private Expression parseNumber() {
-        int start = position;
+        final int start = position;
 
         if (input.charAt(position) == '-') {
             position++;
@@ -149,7 +153,7 @@ public class ExpressionParser {
             position++;
         }
 
-        int value = Integer.parseInt(
+        final int value = Integer.parseInt(
                 input.substring(start, position)
         );
 
@@ -160,20 +164,20 @@ public class ExpressionParser {
      * Разбирает имя переменной.
      */
     private Expression parseVariable() {
-        int start = position;
+        final int start = position;
 
         while (position < input.length()
                 && Character.isLetterOrDigit(input.charAt(position))) {
             position++;
         }
 
-        String name = input.substring(start, position);
+        final String name = input.substring(start, position);
 
         return new Variable(name);
     }
 
     /**
-     * Проверяет, является ли следующий символ цифрой.
+     * Является ли следующий символ цифрой.
      */
     private boolean hasNextDigit() {
         return position + 1 < input.length()
