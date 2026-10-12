@@ -1,5 +1,6 @@
 package ru.nsu.tikhonov;
 
+import java.text.ParseException;
 import java.util.Scanner;
 import ru.nsu.tikhonov.expression.Expression;
 import ru.nsu.tikhonov.expression.parser.ExpressionParser;
@@ -16,34 +17,41 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ExpressionParser parser = new ExpressionParser();
 
-        System.out.println("Введите математическое выражение:");
-        String input = scanner.nextLine();
+        try {
+            System.out.println("Введите математическое выражение:");
+            String input = scanner.nextLine();
+            Expression expression = parser.parse(input);
 
-        Expression expression = parser.parse(input);
+            System.out.println("Выражение:");
+            expression.print();
 
-        System.out.println("Выражение:");
-        expression.print();
+            System.out.println();
+            System.out.println("Введите переменную для производной:");
+            String variable = scanner.nextLine();
+            Expression derivative = expression.derivative(variable);
 
-        System.out.println();
-        System.out.println("Введите переменную, по которой нужно взять производную:");
-        String variable = scanner.nextLine();
+            System.out.println("Производная:");
+            derivative.print();
 
-        Expression derivative = expression.derivative(variable);
+            System.out.println();
+            System.out.println("Введите значения переменных (например: x = 10; y = 13):");
+            String assignments = scanner.nextLine();
+            System.out.println("Значение выражения:");
+            System.out.println(expression.eval(assignments));
 
-        System.out.println("Производная:");
-        derivative.print();
+            System.out.println("Значение производной:");
+            System.out.println(derivative.eval(assignments));
 
-        System.out.println();
-        System.out.println("Введите значения переменных для вычисления выражения:");
-        System.out.println("Например: x = 10; y = 13");
-        String assignments = scanner.nextLine();
-
-        System.out.println("Значение выражения:");
-        System.out.println(expression.eval(assignments));
-
-        System.out.println("Значение производной:");
-        System.out.println(derivative.eval(assignments));
-
-        scanner.close();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный ввод. " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Арифметическая ошибка. " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("Не задано значение переменной.");
+        } catch (RuntimeException e) {
+            System.out.println("Ошибка. " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
     }
 }
