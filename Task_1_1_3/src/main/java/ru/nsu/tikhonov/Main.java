@@ -38,10 +38,11 @@ public class Main {
         System.out.println("Например: x = 10; y = 13");
         String assignments = scanner.nextLine();
 
-        int result = expression.eval(assignments);
-
         System.out.println("Значение выражения:");
-        System.out.println(result);
+        System.out.println(expression.eval(assignments));
+
+        System.out.println("Значение производной:");
+        System.out.println(derivative.eval(assignments));
 
         scanner.close();
     }

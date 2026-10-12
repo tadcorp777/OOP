@@ -57,12 +57,4 @@ public abstract class Expression {
     public void print() {
         System.out.println(this);
     }
-
-    /**
-     * Выводит выражение в переданный поток.
-     */
-    public void print(PrintWriter out) {
-        out.println(this);
-    }
-
 }
