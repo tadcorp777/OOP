@@ -163,11 +163,6 @@ public class ExpressionParser {
     /**
      * Разбирает числовую константу.
      */
-    /**
-     * Разбирает числовую константу.
-     *
-     * @return числовое выражение
-     */
     private Expression parseNumber() {
         final int start = position;
 

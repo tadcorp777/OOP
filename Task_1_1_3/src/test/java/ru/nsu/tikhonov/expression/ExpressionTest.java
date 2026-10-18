@@ -16,7 +16,7 @@ import ru.nsu.tikhonov.expression.parser.ExpressionParser;
 /**
  * Дополнительные тесты для проверки граничных случаев.
  */
-class ExtraCasesTest {
+class ExpressionTest {
 
     private final ExpressionParser parser = new ExpressionParser();
 
