@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * Базовый класс для реализаций графа, содержащий общую логику хранения
+ * вершин и проверок.
+ */
 public abstract class AbstractGraph implements Graph {
 
     protected final List<String> vertices = new ArrayList<>();

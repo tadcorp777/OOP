@@ -1,6 +1,5 @@
 package ru.nsu.tikhonov.graph.algorithms;
 
-import ru.nsu.tikhonov.graph.Graph;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,6 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import ru.nsu.tikhonov.graph.Graph;
+
+/**
+ * Топологическая сортировка алгоритмом Кана.
+ */
 public class KahnTopologicalSort implements TopologicalSort {
 
     @Override

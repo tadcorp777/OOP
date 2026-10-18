@@ -3,6 +3,9 @@ package ru.nsu.tikhonov.graph;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Реализация ориентированного графа на основе матрицы инцидентности.
+ */
 public class IncidenceMatrixGraph extends AbstractGraph {
 
     private List<Edge> edges = new ArrayList<>();

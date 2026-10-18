@@ -1,12 +1,16 @@
 package ru.nsu.tikhonov.graph.algorithms;
 
-import ru.nsu.tikhonov.graph.Graph;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import ru.nsu.tikhonov.graph.Graph;
+
+/**
+ * Топологическая сортировка на основе поиска в глубину.
+ */
 public class DepthFirstTopologicalSort implements TopologicalSort {
 
     @Override

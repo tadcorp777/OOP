@@ -3,6 +3,9 @@ package ru.nsu.tikhonov.graph;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Реализация ориентированного графа на основе матрицы смежности.
+ */
 public class AdjacencyMatrixGraph extends AbstractGraph {
 
     private int[][] adjacencyMatrix = new int[0][0];

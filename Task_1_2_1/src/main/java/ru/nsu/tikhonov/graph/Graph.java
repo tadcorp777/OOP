@@ -3,6 +3,9 @@ package ru.nsu.tikhonov.graph;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Интерфейс ориентированного графа.
+ */
 public interface Graph {
 
     void addVertex(String vertex);

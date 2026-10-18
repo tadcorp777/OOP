@@ -1,13 +1,21 @@
 package ru.nsu.tikhonov.graph;
 
-import ru.nsu.tikhonov.graph.algorithms.DepthFirstTopologicalSort;
-import ru.nsu.tikhonov.graph.algorithms.KahnTopologicalSort;
-import ru.nsu.tikhonov.graph.algorithms.TopologicalSort;
 import java.io.IOException;
 import java.util.List;
 
+import ru.nsu.tikhonov.graph.algorithms.DepthFirstTopologicalSort;
+import ru.nsu.tikhonov.graph.algorithms.KahnTopologicalSort;
+import ru.nsu.tikhonov.graph.algorithms.TopologicalSort;
+
+/**
+ * Точка входа для демонстрации работы графа и алгоритмов
+ * топологической сортировки.
+ */
 public class Main {
 
+    /**
+     * Читает граф из файла и выводит результаты сортировок.
+     */
     public static void main(String[] args) {
         Graph graph = new AdjacencyListGraph();
 

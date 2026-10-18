@@ -5,8 +5,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Утилита для чтения графа из текстового файла.
+ */
 public class GraphFileReader {
 
+    /**
+     * Читает граф из файла и заполняет переданный объект.
+     */
     public static void readFromFile(String fileName, Graph graph)
             throws IOException {
 

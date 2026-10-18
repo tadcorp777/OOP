@@ -1,10 +1,16 @@
 package ru.nsu.tikhonov.graph;
 
+/**
+ * Направленное ребро графа.
+ */
 public class Edge {
 
     private final String from;
     private final String to;
 
+    /**
+     * Создаёт ребро из одной вершины в другую.
+     */
     public Edge(String from, String to) {
         if (from == null || to == null) {
             throw new IllegalArgumentException("Имя вершины не может быть пустым");

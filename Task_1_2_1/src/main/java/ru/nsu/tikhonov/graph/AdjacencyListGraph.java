@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Реализация ориентированного графа на основе списка смежности.
+ */
 public class AdjacencyListGraph extends AbstractGraph {
 
     private final Map<String, List<String>> adjacencyList = new HashMap<>();

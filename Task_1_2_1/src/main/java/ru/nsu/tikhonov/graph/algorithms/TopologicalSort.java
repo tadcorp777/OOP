@@ -1,8 +1,12 @@
 package ru.nsu.tikhonov.graph.algorithms;
 
-import ru.nsu.tikhonov.graph.Graph;
 import java.util.List;
 
+import ru.nsu.tikhonov.graph.Graph;
+
+/**
+ * Интерфейс алгоритма топологической сортировки.
+ */
 public interface TopologicalSort {
 
     List<String> sort(Graph graph);
