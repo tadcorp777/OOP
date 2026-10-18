@@ -1,9 +1,15 @@
 package ru.nsu.tikhonov;
 
-import java.text.ParseException;
 import java.util.Scanner;
 import ru.nsu.tikhonov.expression.Expression;
 import ru.nsu.tikhonov.expression.parser.ExpressionParser;
+
+import ru.nsu.tikhonov.expression.operands.Number;
+import ru.nsu.tikhonov.expression.operands.Variable;
+import ru.nsu.tikhonov.expression.operations.Add;
+import ru.nsu.tikhonov.expression.operations.Div;
+import ru.nsu.tikhonov.expression.operations.Mul;
+import ru.nsu.tikhonov.expression.operations.Sub;
 
 /**
  * Главный класс программы для работы с математическими выражениями.
@@ -14,6 +20,7 @@ public class Main {
      * Запускает программу.
      */
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         ExpressionParser parser = new ExpressionParser();
 

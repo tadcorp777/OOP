@@ -76,7 +76,7 @@ public class ExpressionParser {
     }
 
     /**
-     * Разбирает выражение, состоящее из двух операндов.
+     * Разбирает выражение.
      */
     private Expression parseOperation() {
         position++;
@@ -87,11 +87,23 @@ public class ExpressionParser {
 
         if (position >= input.length()) {
             throw new IllegalArgumentException(
-                    "Ожидался оператор"
+                    "Ожидалась закрывающая скобка"
             );
         }
 
+        if (input.charAt(position) == ')') {
+            position++;
+            return left;
+        }
+
         final char operator = input.charAt(position);
+
+        if (!isOperator(operator)) {
+            throw new IllegalArgumentException(
+                    "Неизвестный оператор: " + operator
+            );
+        }
+
         position++;
 
         final Expression right = parseExpression();
@@ -108,6 +120,16 @@ public class ExpressionParser {
         position++;
 
         return createOperation(operator, left, right);
+    }
+
+    /**
+     * Проверяет, является ли символ математическим оператором.
+     */
+    private boolean isOperator(char operator) {
+        return operator == '+'
+                || operator == '-'
+                || operator == '*'
+                || operator == '/';
     }
 
     /**
@@ -141,6 +163,11 @@ public class ExpressionParser {
     /**
      * Разбирает числовую константу.
      */
+    /**
+     * Разбирает числовую константу.
+     *
+     * @return числовое выражение
+     */
     private Expression parseNumber() {
         final int start = position;
 
@@ -153,11 +180,16 @@ public class ExpressionParser {
             position++;
         }
 
-        final int value = Integer.parseInt(
-                input.substring(start, position)
-        );
+        final String text = input.substring(start, position);
 
-        return new Number(value);
+        try {
+            return new Number(Integer.parseInt(text));
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException(
+                    "Некорректное целое число: " + text,
+                    exception
+            );
+        }
     }
 
     /**
