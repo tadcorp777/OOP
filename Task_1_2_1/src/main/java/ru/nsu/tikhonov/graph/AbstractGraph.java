@@ -36,7 +36,7 @@ public abstract class AbstractGraph implements Graph {
 
         if (containsVertex(vertex)) {
             throw new IllegalArgumentException(
-                    "Вершина не существует: " + vertex);
+                    "Вершина уже существует: " + vertex);
         }
     }
 

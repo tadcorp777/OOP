@@ -13,7 +13,7 @@ public class Edge {
      */
     public Edge(String from, String to) {
         if (from == null || to == null) {
-            throw new IllegalArgumentException("Имя вершины не может быть пустым");
+            throw new IllegalArgumentException("Имя вершины не может быть null");
         }
 
         this.from = from;
