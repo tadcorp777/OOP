@@ -1,8 +1,8 @@
 package ru.nsu.tikhonov;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.ConcurrentModificationException;
 
 /**
  * Хеш-таблица для хранения пар ключ-значение.
@@ -22,7 +22,6 @@ public class HashTable<K, V> implements Iterable<HashTableEntry<K, V>> {
     /**
      * Создаёт пустую хеш-таблицу с начальной вместимостью.
      */
-    @SuppressWarnings("unchecked")
     public HashTable() {
         buckets = (Node<K, V>[]) new Node[DEFAULT_CAPACITY];
         size = 0;
@@ -192,7 +191,6 @@ public class HashTable<K, V> implements Iterable<HashTableEntry<K, V>> {
      * Изменяет вместимость массива и перераспределяет
      * существующие узлы по новым ячейкам.
      */
-    @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
         Node<K, V>[] newBuckets =
                 (Node<K, V>[]) new Node[newCapacity];

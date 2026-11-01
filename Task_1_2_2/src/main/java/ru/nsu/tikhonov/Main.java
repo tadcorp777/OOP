@@ -8,12 +8,14 @@ import java.util.Scanner;
  */
 public class Main {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner;
 
     /**
      * Запускает программу и обрабатывает команды пользователя.
      */
     public static void main(String[] args) {
+
+        scanner = new Scanner(System.in);
 
         HashTableManager<String, Number> manager = new HashTableManager<>();
 
@@ -302,18 +304,16 @@ public class Main {
 
             try {
                 return Integer.valueOf(input);
-            } catch (NumberFormatException e) {
-            }
-
-            try {
-                return Long.valueOf(input);
-            } catch (NumberFormatException e) {
-            }
-
-            try {
-                return Double.valueOf(input);
-            } catch (NumberFormatException e) {
-                System.out.println("Введите корректное число.");
+            } catch (NumberFormatException integerException) {
+                try {
+                    return Long.valueOf(input);
+                } catch (NumberFormatException longException) {
+                    try {
+                        return Double.valueOf(input);
+                    } catch (NumberFormatException doubleException) {
+                        System.out.println("Введите корректное число.");
+                    }
+                }
             }
         }
     }
