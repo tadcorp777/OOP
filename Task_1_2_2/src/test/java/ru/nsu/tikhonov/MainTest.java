@@ -1,14 +1,13 @@
 package ru.nsu.tikhonov;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
-
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Проверяет работу пользовательского интерфейса Main.
@@ -35,12 +34,12 @@ class MainTest {
     @Test
     void testTableManagement() {
         String output = runMain(
-                "1\n" +
-                        "3\n" +
-                        "2\n1\n" +
-                        "2\n99\n" +
-                        "2\n2\n" +
-                        "0\n"
+                "1\n"
+                        + "3\n"
+                        + "2\n1\n"
+                        + "2\n99\n"
+                        + "2\n2\n"
+                        + "0\n"
         );
 
         assertTrue(output.contains("Создана новая таблица #2"));
@@ -57,25 +56,25 @@ class MainTest {
     @Test
     void testHashTableOperations() {
         String output = runMain(
-                "4\none\n1\n" +
-                        "10\n" +
-                        "9\n" +
-                        "11\n" +
-                        "12\n" +
-                        "5\none\n" +
-                        "6\none\n2.5\n" +
-                        "5\none\n" +
-                        "8\none\n" +
-                        "8\nmissing\n" +
-                        "6\nmissing\n5\n" +
-                        "7\none\n99\n" +
-                        "7\none\n2.5\n" +
-                        "7\none\n2.5\n" +
-                        "10\n" +
-                        "9\n" +
-                        "11\n" +
-                        "12\n" +
-                        "0\n"
+                "4\none\n1\n"
+                        + "10\n"
+                        + "9\n"
+                        + "11\n"
+                        + "12\n"
+                        + "5\none\n"
+                        + "6\none\n2.5\n"
+                        + "5\none\n"
+                        + "8\none\n"
+                        + "8\nmissing\n"
+                        + "6\nmissing\n5\n"
+                        + "7\none\n99\n"
+                        + "7\none\n2.5\n"
+                        + "7\none\n2.5\n"
+                        + "10\n"
+                        + "9\n"
+                        + "11\n"
+                        + "12\n"
+                        + "0\n"
         );
 
         assertTrue(output.contains("Элемент добавлен."));
@@ -103,12 +102,12 @@ class MainTest {
     @Test
     void testNumberInput() {
         String output = runMain(
-                "4\ninteger\n42\n" +
-                        "4\nlong\n2147483648\n" +
-                        "4\ndouble\n3.14\n" +
-                        "4\nretry\ninvalid\n7\n" +
-                        "9\n" +
-                        "0\n"
+                "4\ninteger\n42\n"
+                        + "4\nlong\n2147483648\n"
+                        + "4\ndouble\n3.14\n"
+                        + "4\nretry\ninvalid\n7\n"
+                        + "9\n"
+                        + "0\n"
         );
 
         assertTrue(output.contains("Введите корректное число."));
@@ -125,14 +124,14 @@ class MainTest {
     @Test
     void testCompareTables() {
         String output = runMain(
-                "4\nshared\n1\n" +
-                        "1\n" +
-                        "4\nshared\n1\n" +
-                        "13\n1\n2\n" +
-                        "6\nshared\n2\n" +
-                        "13\n1\n2\n" +
-                        "13\n1\n3\n" +
-                        "0\n"
+                "4\nshared\n1\n"
+                        + "1\n"
+                        + "4\nshared\n1\n"
+                        + "13\n1\n2\n"
+                        + "6\nshared\n2\n"
+                        + "13\n1\n2\n"
+                        + "13\n1\n3\n"
+                        + "0\n"
         );
 
         assertTrue(output.contains("Таблицы равны."));
