@@ -83,7 +83,7 @@ public class HashTableManager<K, V> {
      */
     private HashTable<K, V> getTable(int tableNumber) {
         if (tableNumber < 1 || tableNumber > tables.size()) {
-            throw new IllegalArgumentException("Invalid table number: " + tableNumber);
+            throw new IllegalArgumentException("Неверный номер таблицы: " + tableNumber);
         }
 
         return tables.get(tableNumber - 1);
