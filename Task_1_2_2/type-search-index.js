@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.tikhonov","l":"HashTable"},{"p":"ru.nsu.tikhonov","l":"HashTableEntry"},{"p":"ru.nsu.tikhonov","l":"HashTableManager"},{"p":"ru.nsu.tikhonov","l":"Main"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"ru.nsu.tikhonov","l":"HashTable"},{"p":"ru.nsu.tikhonov","l":"HashTableEntry"},{"p":"ru.nsu.tikhonov","l":"HashTableManager"},{"p":"ru.nsu.tikhonov","l":"Main"}];updateSearchResults();
