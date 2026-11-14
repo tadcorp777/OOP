@@ -1,8 +1,4 @@
-
 package ru.nsu.tikhonov;
-
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.io.TempDir;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -13,7 +9,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Тесты для проверки алгоритма поиска подстроки.
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SubstringFinderTest {
 
     @TempDir
-    Path tempDir;
+    private Path tempDir;
 
     /**
      * Поиск нескольких вхождений подстроки.
@@ -55,7 +56,7 @@ class SubstringFinderTest {
     }
 
     /**
-     * Поведение алгоритма, если подстрока не найдена.
+     * Отсутствие совпадений.
      */
     @Test
     void returnsEmptyListWhenSubstringNotFound() throws IOException {
@@ -112,7 +113,7 @@ class SubstringFinderTest {
     }
 
     /**
-     * Поиск пустой подстроки вызывает исключение.
+     * Обработка пустой искомой строки.
      */
     @Test
     void throwsExceptionForEmptySubstring() throws IOException {
@@ -122,6 +123,74 @@ class SubstringFinderTest {
                 IllegalArgumentException.class,
                 () -> SubstringFinder.find(file.toString(), "")
         );
+    }
+
+    /**
+     * Проверяет обработку null вместо искомой строки.
+     */
+    @Test
+    void throwsExceptionForNullSubstring() throws IOException {
+        Path file = createFile("текст");
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> SubstringFinder.find(file.toString(), null)
+        );
+    }
+
+    /**
+     * Обработка ситуации, когда файл не существует.
+     */
+    @Test
+    void throwsIOExceptionWhenFileDoesNotExist() {
+        Path file = tempDir.resolve("missing.txt");
+
+        assertThrows(
+                IOException.class,
+                () -> SubstringFinder.find(file.toString(), "тест")
+        );
+    }
+
+    /**
+     * Поиск с однобуквенной искомой строкой.
+     */
+    @Test
+    void findsSingleCharacterSubstring() throws IOException {
+        Path file = createFile("banana");
+
+        List<Long> result = SubstringFinder.find(
+                file.toString(), "a"
+        );
+
+        assertEquals(Arrays.asList(1L, 3L, 5L), result);
+    }
+
+    /**
+     * Возврат к предыдущему префиксу при несовпадении символов.
+     */
+    @Test
+    void findsOccurrencesAfterSearchFallback() throws IOException {
+        Path file = createFile("abacabab");
+
+        List<Long> result = SubstringFinder.find(
+                file.toString(), "abab"
+        );
+
+        assertEquals(Collections.singletonList(4L), result);
+    }
+
+    /**
+     * Построение префиксного массива при несовпадении символов.
+     */
+    @Test
+    void findsSubstringWithPrefixFallback() throws IOException {
+        Path file = createFile("ababaca");
+
+        List<Long> result = SubstringFinder.find(
+                file.toString(), "ababaca"
+        );
+
+        assertEquals(Collections.singletonList(0L), result);
     }
 
     /**
@@ -137,7 +206,7 @@ class SubstringFinderTest {
     }
 
     /**
-     * Работа алгоритма на большом файле.
+     * Поиск подстроки в большом файле.
      */
     @Test
     void findsSubstringInLargeFile() throws IOException {
