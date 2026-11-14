@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"ru.nsu.tikhonov","l":"Main"},{"p":"ru.nsu.tikhonov","l":"SubstringFinder"}];updateSearchResults();
