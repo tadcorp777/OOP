@@ -52,7 +52,7 @@ public class HashTable<K, V> implements Iterable<HashTableEntry<K, V>> {
      */
     private int getBucketIndex(Object key) {
         if (key == null) {
-            throw new IllegalArgumentException("Key cannot be null");
+            throw new IllegalArgumentException("Ключ не может быть null");
         }
 
         return Math.floorMod(key.hashCode(), buckets.length);
@@ -123,7 +123,7 @@ public class HashTable<K, V> implements Iterable<HashTableEntry<K, V>> {
         Node<K, V> node = findNode(key);
 
         if (node == null) {
-            throw new IllegalArgumentException("Key not found: " + key);
+            throw new IllegalArgumentException("Ключ не найден: " + key);
         }
 
         node.value = value;
@@ -252,7 +252,7 @@ public class HashTable<K, V> implements Iterable<HashTableEntry<K, V>> {
         private void checkForModification() {
             if (expectedModCount != modCount) {
                 throw new ConcurrentModificationException(
-                        "HashTable was modified during iteration"
+                        "Хэш-таблица была изменена во время итерации"
                 );
             }
         }
